@@ -1,8 +1,8 @@
 # CI/CD Pipeline for Python-Flask App on AWS
 
-[cite_start]This project outlines the process of deploying a Python Flask application using a CI/CD (Continuous Integration/Continuous Delivery) pipeline on the Amazon Web Services (AWS) cloud The pipeline is designed to automate the build and deployment process whenever a developer pushes code to a Git repository[cite: 2].
+This project outlines the process of deploying a Python Flask application using a CI/CD (Continuous Integration/Continuous Delivery) pipeline on the Amazon Web Services (AWS) cloud The pipeline is designed to automate the build and deployment process whenever a developer pushes code to a Git repository.
 
-[cite_start]The project leverages the following tools to create a robust DevOps CI/CD pipeline:
+The project leverages the following tools to create a robust DevOps CI/CD pipeline:
 
 * **Git**: Used for version control and to trigger the pipeline.
 * **Jenkins**: The central automation server for continuous integration and continuous delivery.
@@ -48,7 +48,7 @@ sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](htt
 sudo dnf install jenkins -y 
 sudo systemctl enable jenkins 
 sudo systemctl start jenkins
-
+'''bash
 First-Time Login
 ```bash
 To get the initial admin password for Jenkins, use this command:
