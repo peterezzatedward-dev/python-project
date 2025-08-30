@@ -1,86 +1,48 @@
-CI/CD Pipeline for Python-Flask App on AWS
-This project provides a comprehensive guide to setting up a CI/CD pipeline for a Python Flask application on AWS. The pipeline automates the entire process, from code push to a Git repository to final deployment on a Kubernetes cluster.
+# CI/CD Pipeline for Python-Flask App on AWS
 
-Key Tools Used
-The pipeline is built using the following core tools:
+[cite_start]This project outlines the process of deploying a Python Flask application using a CI/CD (Continuous Integration/Continuous Delivery) pipeline on the Amazon Web Services (AWS) cloud[cite: 1, 2]. [cite_start]The pipeline is designed to automate the build and deployment process whenever a developer pushes code to a Git repository[cite: 2].
 
-Git: For version control and to initiate the CI/CD workflow.
+[cite_start]The project leverages the following tools to create a robust DevOps CI/CD pipeline[cite: 3]:
 
-Jenkins: The central automation server that orchestrates the build and delivery process.
+* [cite_start]**Git**: Used for version control and to trigger the pipeline[cite: 4].
+* [cite_start]**Jenkins**: The central automation server for continuous integration and continuous delivery[cite: 5].
+* [cite_start]**Ansible**: Utilized for deployment tasks[cite: 6].
+* [cite_start]**Docker**: Used to containerize the application and create a Docker image[cite: 7].
+* [cite_start]**Kubernetes**: The container orchestration platform for deploying the application[cite: 8].
 
-Docker: To containerize the Flask application, ensuring it runs consistently across environments.
 
-Ansible: Used for automating the deployment of the application.
+<img width="1814" height="660" alt="docker" src="https://github.com/user-attachments/assets/4e7be75f-845b-4711-8960-051e744159cd" />
 
-Kubernetes (Minikube): The container orchestration platform where the final application is deployed.
+---
 
-1. AWS Infrastructure Setup with Terraform
-The first step is to provision the necessary AWS infrastructure using Terraform. The following components are created to host the pipeline services:
+## 1. AWS Infrastructure Setup
 
-VPC (Virtual Private Cloud)
+[cite_start]The initial step involves setting up the AWS infrastructure using **Terraform**[cite: 9]. This will provision the necessary resources to host our services.
 
-Internet Gateway
+The following AWS components will be created:
 
-Route Table
+* [cite_start]**VPC** (Virtual Private Cloud) [cite: 10]
+* [cite_start]**Internet Gateway** [cite: 11]
+* [cite_start]**Route Table** [cite: 12]
+* [cite_start]**Security Group** [cite: 13]
+* [cite_start]**EC2 Instances** for Jenkins, Docker & Ansible, and Kubernetes (Minikube) [cite: 14]
 
-Security Group
+![Diagram of an AWS infrastructure with VPC, Internet Gateway, Route Table, and EC2 instances for Jenkins, Docker, and Kubernetes](https://i.imgur.com/G4xS5G2.png)
 
-EC2 Instances for Jenkins, Docker/Ansible, and Minikube.
+---
 
-2. Jenkins Server Setup
-After your EC2 instance for Jenkins is provisioned, follow these steps to install and configure it.
+## 2. Jenkins Server Setup
 
-Installation
-Use the following commands to install Jenkins and its dependencies:
+[cite_start]After provisioning the EC2 instance, you need to set up Jenkins[cite: 15].
 
-sudo dnf update -y
-sudo dnf install java-17-amazon-corretto -y
-sudo wget -O /etc/yum.repos.d/jenkins.repo [https://pkg.jenkins.io/redhat-stable/jenkins.repo](https://pkg.jenkins.io/redhat-stable/jenkins.repo)
-sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key)
-sudo dnf install jenkins -y
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
+#### Install Jenkins
+[cite_start]Run the following commands to install Jenkins[cite: 16]:
 
-Initial Setup
-To retrieve the initial administrator password for Jenkins:
-
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-
-Configuration
-Install Git on the Jenkins server:
-
-sudo yum install git -y
-
-Install the SSH plugin in Jenkins.
-
-Generate an SSH key (ssh-keygen -t rsa -b 4096 -m PEM), copy the public key to the Docker server, and store the private key in Jenkins' global credentials.
-
-Store your Docker Hub username and password as credentials in Jenkins.
-
-3. Docker & Ansible Server Setup
-Use these commands to set up the EC2 instance for Docker and Ansible.
-
-Install Docker
-sudo yum update -y
-sudo amazon-linux-extras install docker
-sudo usermod -a -G docker ec2-user
-sudo service docker start
-sudo systemctl enable docker
-
-Install Ansible
-sudo amazon-linux-extras enable ansible2
-sudo yum install -y ansible
-
-4. Minikube (Kubernetes) Setup
-Set up a local Kubernetes environment on a dedicated EC2 instance using Minikube.
-
-sudo yum install -y docker
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo usermod -aG docker $USER && newgrp docker
-curl -LO "[https://dl.k8s.io/release/$(curl](https://dl.k8s.io/release/$(curl) -L -s [https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl](https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl)"
-chmod +x kubectl
-sudo mv kubectl /usr/local/bin/
-curl -LO [https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64](https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64)
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-minikube start --driver=docker
+```bash
+sudo dnf update -y [cite: 17]
+sudo dnf install java-17-amazon-corretto -y [cite: 18]
+sudo wget -O /etc/yum.repos.d/jenkins.repo [https://pkg.jenkins.io/redhat-stable/jenkins.repo](https://pkg.jenkins.io/redhat-stable/jenkins.repo) [cite: 19]
+sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key) [cite: 20]
+sudo dnf install jenkins -y [cite: 21]
+sudo systemctl enable jenkins [cite: 22]
+sudo systemctl start jenkins [cite: 23]
