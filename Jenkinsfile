@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Source Code') {
             steps {
-                git url: 'https://github.com/peterezzatedward-dev/task-python', 
+                git url: 'https://github.com/peterezzatedward-dev/python-project', 
                     branch: 'main'
             }
         }
