@@ -4,11 +4,11 @@
 
 [cite_start]The project leverages the following tools to create a robust DevOps CI/CD pipeline[cite: 3]:
 
-* [cite_start]**Git**: Used for version control and to trigger the pipeline[cite: 4].
-* [cite_start]**Jenkins**: The central automation server for continuous integration and continuous delivery[cite: 5].
-* [cite_start]**Ansible**: Utilized for deployment tasks[cite: 6].
-* [cite_start]**Docker**: Used to containerize the application and create a Docker image[cite: 7].
-* [cite_start]**Kubernetes**: The container orchestration platform for deploying the application[cite: 8].
+* **Git**: Used for version control and to trigger the pipeline[cite: 4].
+* **Jenkins**: The central automation server for continuous integration and continuous delivery[cite: 5].
+* **Ansible**: Utilized for deployment tasks[cite: 6].
+* **Docker**: Used to containerize the application and create a Docker image[cite: 7].
+***Kubernetes**: The container orchestration platform for deploying the application[cite: 8].
 
 
 <img width="1814" height="660" alt="docker" src="https://github.com/user-attachments/assets/4e7be75f-845b-4711-8960-051e744159cd" />
@@ -27,7 +27,8 @@ The following AWS components will be created:
 * [cite_start]**Security Group** [cite: 13]
 * [cite_start]**EC2 Instances** for Jenkins, Docker & Ansible, and Kubernetes (Minikube) [cite: 14]
 
-![Diagram of an AWS infrastructure with VPC, Internet Gateway, Route Table, and EC2 instances for Jenkins, Docker, and Kubernetes](https://i.imgur.com/G4xS5G2.png)
+![Uploading Gemini_Generated_Image_m2kc43m2kc43m2kc.png…]()
+
 
 ---
 
