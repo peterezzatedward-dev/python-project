@@ -30,7 +30,7 @@ pipeline {
                             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin &&
                             cd /home/ec2-user/python-project/
                             ansible-playbook -i inventory.ini create-docker.yml
-                            ansible-playbook -i /home/ec2-user/python-project/k8s.ini  /home/ec2-user/python-project/k8s.yml
+                            ansible-playbook -i k8s.ini  k8s.yml
 							"
                     '''
                 }
