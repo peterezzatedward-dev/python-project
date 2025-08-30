@@ -40,7 +40,7 @@ After provisioning the EC2 instance, you need to set up Jenkins.
 #### Install Jenkins
 Run the following commands to install Jenkins:
 
-```bash
+```
 sudo dnf update -y
 sudo dnf install java-17-amazon-corretto -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo [https://pkg.jenkins.io/redhat-stable/jenkins.repo](https://pkg.jenkins.io/redhat-stable/jenkins.repo)
@@ -48,7 +48,59 @@ sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](htt
 sudo dnf install jenkins -y 
 sudo systemctl enable jenkins 
 sudo systemctl start jenkins
-bash'''
-First-Time Login
-```bash
+```
+### First-Time Login
+
 To get the initial admin password for Jenkins, use this command:
+
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+### Install Git
+```
+sudo yum install git -y
+```
+### Configure Jenkins
+
+You will need to install and configure the following:
+* ***SSH Plugin***: Install the plugin in Jenkins.
+* ***SSH Key***: Generate an SSH key (ssh-keygen -t rsa -b 4096 -m PEM), copy the public key to the Docker server, and store the private key in Jenkins' global credentials.
+* ***Docker Hub Credentials***: Create a username and password for Docker Hub and store them in Jenkins credentials.
+---
+## 3. Docker & Ansible Server Setup
+
+This section details the setup for the EC2 instance that will run Docker and Ansible.
+
+## Install Docker
+
+```bash
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo usermod -a -G docker ec2-user
+sudo service docker start 
+sudo systemctl enable docker
+```
+
+## Install Ansible
+```bash
+sudo amazon-linux-extras enable ansible2
+sudo yum install -y ansible
+```
+---
+
+## 4. Minikube (Kubernetes) Setup
+
+This section covers setting up Minikube, which provides a local, single-node Kubernetes cluster for deployment.
+
+```bash
+udo yum install -y docker 
+sudo systemctl enable docker 
+sudo systemctl start docker 
+sudo usermod -aG docker $USER && newgrp docker
+curl -LO "[https://dl.k8s.io/release/$(curl](https://dl.k8s.io/release/$(curl) -L -s [https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl](https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl)" 
+chmod +x kubectl 
+sudo mv kubectl /usr/local/bin/
+curl -LO [https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64](https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64) 
+sudo install minikube-linux-amd64 /usr/local/bin/minikube 
+minikube start --driver=docker 
+```
