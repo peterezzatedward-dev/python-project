@@ -17,17 +17,18 @@
 
 ## 1. AWS Infrastructure Setup
 
-[cite_start]The initial step involves setting up the AWS infrastructure using **Terraform**[cite: 9]. This will provision the necessary resources to host our services.
+The initial step involves setting up the AWS infrastructure using **Terraform**[cite: 9]. This will provision the necessary resources to host our services.
 
 The following AWS components will be created:
 
-* [cite_start]**VPC** (Virtual Private Cloud) [cite: 10]
-* [cite_start]**Internet Gateway** [cite: 11]
-* [cite_start]**Route Table** [cite: 12]
-* [cite_start]**Security Group** [cite: 13]
-* [cite_start]**EC2 Instances** for Jenkins, Docker & Ansible, and Kubernetes (Minikube) [cite: 14]
+* **VPC** (Virtual Private Cloud) [cite: 10]
+* **Internet Gateway** [cite: 11]
+* **Route Table** [cite: 12]
+* **Security Group** [cite: 13]
+* **EC2 Instances** for Jenkins, Docker & Ansible, and Kubernetes (Minikube) [cite: 14]
 
-![Uploading Gemini_Generated_Image_m2kc43m2kc43m2kc.png…]()
+
+<img width="2816" height="1536" alt="Gemini_Generated_Image_m2kc43m2kc43m2kc" src="https://github.com/user-attachments/assets/2fcbcfcf-e9c3-44b5-ae4e-9e9592e395ce" />
 
 
 ---
