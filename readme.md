@@ -48,7 +48,7 @@ sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](htt
 sudo dnf install jenkins -y 
 sudo systemctl enable jenkins 
 sudo systemctl start jenkins
-'''bash
+'''
 First-Time Login
 ```bash
 To get the initial admin password for Jenkins, use this command:
