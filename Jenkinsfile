@@ -42,6 +42,7 @@ pipeline {
                 script {
                     sshagent(['asnible_server']) {
                      sh 'ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.229'
+                     sh 'cd /home/ec2-user/python-project/'
                      sh 'ansible-playbook -i k8s.ini k8s.yml'
                    }
                 }
