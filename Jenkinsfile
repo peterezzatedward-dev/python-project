@@ -30,6 +30,7 @@ pipeline {
                             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin &&
                             cd /home/ec2-user/python-project/
                             ansible-playbook -i inventory.ini create-docker.yml
+                            ansible-playbook -i /home/ec2-user/python-project/k8s.ini  /home/ec2-user/python-project/k8s.yml
 							"
                     '''
                 }
@@ -37,15 +38,6 @@ pipeline {
 		      }
             }
         }
-        stage('Run kubernetes container and services') {
-            steps {
-                script {
-                    sshagent(['asnible_server']) {
-                     sh 'ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.229'
-                     sh 'ansible-playbook -i /home/ec2-user/python-project/k8s.ini  /home/ec2-user/python-project/k8s.yml'
-                   }
-                }
-            }
-        }
+
     }
 }
