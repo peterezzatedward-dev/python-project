@@ -3,7 +3,7 @@
 
   tasks:
   - name: create docker image
-    command: docker build -t 251991/python-task /home/ec2-user/python-project/project .
+    command: docker build -t 251991/python-task /home/ec2-user/python-project/project
 
   - name: push docker image
     command: docker push 251991/python-task:latest
