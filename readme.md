@@ -1,14 +1,14 @@
 # CI/CD Pipeline for Python-Flask App on AWS
 
-[cite_start]This project outlines the process of deploying a Python Flask application using a CI/CD (Continuous Integration/Continuous Delivery) pipeline on the Amazon Web Services (AWS) cloud[cite: 1, 2]. [cite_start]The pipeline is designed to automate the build and deployment process whenever a developer pushes code to a Git repository[cite: 2].
+[cite_start]This project outlines the process of deploying a Python Flask application using a CI/CD (Continuous Integration/Continuous Delivery) pipeline on the Amazon Web Services (AWS) cloud The pipeline is designed to automate the build and deployment process whenever a developer pushes code to a Git repository[cite: 2].
 
-[cite_start]The project leverages the following tools to create a robust DevOps CI/CD pipeline[cite: 3]:
+[cite_start]The project leverages the following tools to create a robust DevOps CI/CD pipeline:
 
-* **Git**: Used for version control and to trigger the pipeline[cite: 4].
-* **Jenkins**: The central automation server for continuous integration and continuous delivery[cite: 5].
-* **Ansible**: Utilized for deployment tasks[cite: 6].
-* **Docker**: Used to containerize the application and create a Docker image[cite: 7].
-***Kubernetes**: The container orchestration platform for deploying the application[cite: 8].
+* **Git**: Used for version control and to trigger the pipeline.
+* **Jenkins**: The central automation server for continuous integration and continuous delivery.
+* **Ansible**: Utilized for deployment tasks.
+* **Docker**: Used to containerize the application and create a Docker image.
+***Kubernetes**: The container orchestration platform for deploying the application.
 
 
 <img width="1814" height="660" alt="docker" src="https://github.com/user-attachments/assets/4e7be75f-845b-4711-8960-051e744159cd" />
@@ -17,15 +17,15 @@
 
 ## 1. AWS Infrastructure Setup
 
-The initial step involves setting up the AWS infrastructure using **Terraform**[cite: 9]. This will provision the necessary resources to host our services.
+The initial step involves setting up the AWS infrastructure using **Terraform**. This will provision the necessary resources to host our services.
 
 The following AWS components will be created:
 
-* **VPC** (Virtual Private Cloud) [cite: 10]
-* **Internet Gateway** [cite: 11]
-* **Route Table** [cite: 12]
-* **Security Group** [cite: 13]
-* **EC2 Instances** for Jenkins, Docker & Ansible, and Kubernetes (Minikube) [cite: 14]
+* **VPC** (Virtual Private Cloud)
+* **Internet Gateway**
+* **Route Table**
+* **Security Group**
+* **EC2 Instances** for Jenkins, Docker & Ansible, and Kubernetes (Minikube)
 
 
 <img width="2816" height="1536" alt="Gemini_Generated_Image_m2kc43m2kc43m2kc" src="https://github.com/user-attachments/assets/2fcbcfcf-e9c3-44b5-ae4e-9e9592e395ce" />
