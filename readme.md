@@ -35,10 +35,10 @@ The following AWS components will be created:
 
 ## 2. Jenkins Server Setup
 
-[cite_start]After provisioning the EC2 instance, you need to set up Jenkins.
+After provisioning the EC2 instance, you need to set up Jenkins.
 
 #### Install Jenkins
-[cite_start]Run the following commands to install Jenkins:
+Run the following commands to install Jenkins:
 
 ```bash
 sudo dnf update -y
@@ -47,4 +47,8 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo [https://pkg.jenkins.io/redhat-stable
 sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key)
 sudo dnf install jenkins -y 
 sudo systemctl enable jenkins 
-sudo systemctl start jenkins 
+sudo systemctl start jenkins
+
+First-Time Login
+```bash
+To get the initial admin password for Jenkins, use this command:
