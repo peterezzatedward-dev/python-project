@@ -8,7 +8,7 @@ The project leverages the following tools to create a robust DevOps CI/CD pipeli
 * **Jenkins**: The central automation server for continuous integration and continuous delivery.
 * **Ansible**: Utilized for deployment tasks.
 * **Docker**: Used to containerize the application and create a Docker image.
-***Kubernetes**: The container orchestration platform for deploying the application.
+* **Kubernetes**: The container orchestration platform for deploying the application.
 
 
 <img width="1814" height="660" alt="docker" src="https://github.com/user-attachments/assets/4e7be75f-845b-4711-8960-051e744159cd" />
