@@ -35,16 +35,16 @@ The following AWS components will be created:
 
 ## 2. Jenkins Server Setup
 
-[cite_start]After provisioning the EC2 instance, you need to set up Jenkins[cite: 15].
+[cite_start]After provisioning the EC2 instance, you need to set up Jenkins.
 
 #### Install Jenkins
-[cite_start]Run the following commands to install Jenkins[cite: 16]:
+[cite_start]Run the following commands to install Jenkins:
 
 ```bash
-sudo dnf update -y [cite: 17]
-sudo dnf install java-17-amazon-corretto -y [cite: 18]
-sudo wget -O /etc/yum.repos.d/jenkins.repo [https://pkg.jenkins.io/redhat-stable/jenkins.repo](https://pkg.jenkins.io/redhat-stable/jenkins.repo) [cite: 19]
-sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key) [cite: 20]
-sudo dnf install jenkins -y [cite: 21]
-sudo systemctl enable jenkins [cite: 22]
-sudo systemctl start jenkins [cite: 23]
+sudo dnf update -y
+sudo dnf install java-17-amazon-corretto -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo [https://pkg.jenkins.io/redhat-stable/jenkins.repo](https://pkg.jenkins.io/redhat-stable/jenkins.repo)
+sudo rpm --import [https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key](https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key)
+sudo dnf install jenkins -y 
+sudo systemctl enable jenkins 
+sudo systemctl start jenkins 
